@@ -1,15 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "display": "standalone",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "32x32 24x24 16x16",
+      "src": "favicon.png",
+      "type": "image/png"
     }
   ],
+  "name": "AceAlters",
+  "short_name": "AceAlters",
   "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#A0C3FF",
+  "background_color": "#FFFFFF"
 }
