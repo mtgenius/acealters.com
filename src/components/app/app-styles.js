@@ -1,5 +1,10 @@
 export default (theme) => ({
-  h1: {
+  title: {
+    flexGrow: 1,
     fontFamily: '"Architects Daughter", cursive'
+  },
+  toolbar: {
+    display: 'flex',
+    flexDirection: 'row'
   }
 });
