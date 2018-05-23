@@ -6,17 +6,19 @@ export default (theme) => ({
     color: theme.palette.common.white
   },
   title: {
+    alignItems: 'center',
+    display: 'flex',
     flexGrow: 1,
     fontFamily: '"Architects Daughter", cursive'
   },
   toolbar: {
+    alignItems: 'stretch',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
   [mobileMediaQuery]: {
     toolbar: {
-      alignItems: 'stretch',
       flexDirection: 'column'
     }
   }

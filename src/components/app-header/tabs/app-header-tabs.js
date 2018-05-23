@@ -18,7 +18,7 @@ class AppHeaderTabs extends React.PureComponent {
   link(to, children) {
     return (
       <Link
-        className={this.props.classes.tabLink}
+        className={this.props.classes.link}
         to={to}
       >
         <span children={children} />
@@ -28,9 +28,10 @@ class AppHeaderTabs extends React.PureComponent {
 
   get tabClasses() {
     return this.memoizeTabClasses({
-      label: this.props.classes.tabLabel,
-      labelContainer: this.props.classes.tabLabelContainer,
+      label: this.props.classes.label,
+      labelContainer: this.props.classes.labelContainer,
       root: this.props.classes.tab,
+      selected: this.props.classes.selected,
       wrapper: this.props.classes.tabWrapper
     });
   }

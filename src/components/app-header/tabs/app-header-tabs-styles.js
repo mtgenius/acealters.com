@@ -2,34 +2,38 @@ import { mobileMediaQuery } from '../../../constants/breakpoints';
 
 export default (theme) => ({
   indicator: {
-    backgroundColor: 'rgba(240, 240, 240, 0.4)'
+    backgroundColor: theme.palette.common.white
   },
-  scroller: {
-    display: 'flex'
-  },
-  tab: {
-    display: 'flex',
-    height: '100%',
-    minWidth: 120
-  },
-  tabLabel: {
+  label: {
     alignItems: 'stretch',
     display: 'flex',
     flexGrow: 1
   },
-  tabLabelContainer: {
+  labelContainer: {
     alignSelf: 'stretch',
     display: 'flex',
     flexGrow: 1,
     padding: 0
   },
-  tabLink: {
+  link: {
     alignItems: 'center',
     color: theme.palette.common.white,
     display: 'flex',
     flexGrow: 1,
     justifyContent: 'center',
     textDecoration: 'none'
+  },
+  scroller: {
+    display: 'flex'
+  },
+  selected: {
+    opacity: '1 !important'
+  },
+  tab: {
+    display: 'flex',
+    height: '100%',
+    minWidth: 120,
+    opacity: 0.658
   },
   tabs: {
     alignSelf: 'stretch',
@@ -41,7 +45,5 @@ export default (theme) => ({
   tabWrapper: {
     height: '100%',
     position: 'absolute'
-  },
-  [mobileMediaQuery]: {
   }
 });
