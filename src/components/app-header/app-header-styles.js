@@ -1,10 +1,9 @@
+import { mobileMediaQuery } from '../../constants/breakpoints';
+
 export default (theme) => ({
   appBar: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white
-  },
-  button: {
-    marginRight: theme.spacing.unit
   },
   title: {
     flexGrow: 1,
@@ -12,6 +11,13 @@ export default (theme) => ({
   },
   toolbar: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  [mobileMediaQuery]: {
+    toolbar: {
+      alignItems: 'stretch',
+      flexDirection: 'column'
+    }
   }
 });

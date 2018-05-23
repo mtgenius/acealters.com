@@ -1,11 +1,10 @@
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import appHeaderStyles from './app-header-styles';
+import Tabs from './tabs/app-header-tabs';
 
 class AppHeader extends React.PureComponent {
   render() {
@@ -21,23 +20,7 @@ class AppHeader extends React.PureComponent {
             color="inherit"
             variant="title"
           />
-          <Button
-            children="Shop"
-            className={this.props.classes.button}
-            component={Link}
-            to="/"
-          />
-          <Button
-            children="Gallery"
-            className={this.props.classes.button}
-            component={Link}
-            to="/gallery"
-          />
-          <Button
-            children="Contact"
-            component={Link}
-            to="/contact"
-          />
+          <Tabs />
         </Toolbar>
       </AppBar>
     );
