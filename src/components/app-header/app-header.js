@@ -10,7 +10,10 @@ import appHeaderStyles from './app-header-styles';
 class AppHeader extends React.PureComponent {
   render() {
     return (
-      <AppBar position="static">
+      <AppBar
+        className={this.props.classes.appBar}
+        position="static"
+      >
         <Toolbar className={this.props.classes.toolbar}>
           <Typography
             children="AceAlters.com"

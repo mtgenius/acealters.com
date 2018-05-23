@@ -2,6 +2,10 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 export default createMuiTheme({
   palette: {
+    common: {
+      black: '#202020',
+      white: '#F0F0F0'
+    },
     error: {
       contrastText: '#000000',
       dark: '#C8839B',
@@ -9,17 +13,17 @@ export default createMuiTheme({
       main: '#FCB3CC'
     },
     primary: {
-      contrastText: '#000000',
-      dark: '#82B3C9',
-      light: '#E6FFFF',
-      main: '#B3E5FC'
+      contrastText: '#202020',
+      dark: '#C96F53',
+      light: '#FFD0B0',
+      main: '#FF9E80'
     },
     secondary: {
-      contrastText: '#000000',
-      dark: '#C8BE83',
-      light: '#FFFFE5',
-      main: '#FCF0B3'
+      contrastText: '#202020',
+      dark: '#C96F53',
+      light: '#FFD0B0',
+      main: '#FF9E80'
     },
-    type: 'light'
+    type: 'dark'
   }
 });
