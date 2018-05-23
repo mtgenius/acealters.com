@@ -1,5 +1,3 @@
-import { mobileMediaQuery } from '../../../constants/breakpoints';
-
 export default (theme) => ({
   indicator: {
     backgroundColor: theme.palette.common.white

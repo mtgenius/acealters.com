@@ -5,7 +5,6 @@ import memoizeClasses from 'memoize-classes';
 import React from 'react';
 import Link from 'react-router-dom/Link';
 import appHeaderTabsStyles from './app-header-tabs-styles';
-import PageRouter from '../../page-router/page-router';
 
 class AppHeaderTabs extends React.PureComponent {
 
@@ -47,34 +46,30 @@ class AppHeaderTabs extends React.PureComponent {
 
   render() {
     return (
-      <PageRouter>
-        {(page) =>
-          <Tabs
-            classes={this.tabsClasses}
-            fullWidth
-            value={page || false}
-          >
-            <Tab
-              classes={this.tabClasses}
-              disabled={page === 'home'}
-              label={this.link('/', 'Shop')}
-              value="home"
-            />
-            <Tab
-              classes={this.tabClasses}
-              disabled={page === 'gallery'}
-              label={this.link('/gallery', 'Gallery')}
-              value="gallery"
-            />
-            <Tab
-              classes={this.tabClasses}
-              disabled={page === 'contact'}
-              label={this.link('/contact', 'Contact')}
-              value="contact"
-            />
-          </Tabs>
-        }
-      </PageRouter>
+      <Tabs
+        classes={this.tabsClasses}
+        fullWidth
+        value={this.props.page || false}
+      >
+        <Tab
+          classes={this.tabClasses}
+          disabled={this.props.page === 'home'}
+          label={this.link('/', 'Shop')}
+          value="home"
+        />
+        <Tab
+          classes={this.tabClasses}
+          disabled={this.props.page === 'gallery'}
+          label={this.link('/gallery', 'Gallery')}
+          value="gallery"
+        />
+        <Tab
+          classes={this.tabClasses}
+          disabled={this.props.page === 'contact'}
+          label={this.link('/contact', 'Contact')}
+          value="contact"
+        />
+      </Tabs>
     );
   }
 }

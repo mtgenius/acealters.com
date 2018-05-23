@@ -20,7 +20,7 @@ class AppHeader extends React.PureComponent {
             color="inherit"
             variant="title"
           />
-          <Tabs />
+          <Tabs page={this.props.page} />
         </Toolbar>
       </AppBar>
     );

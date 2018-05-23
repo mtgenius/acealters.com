@@ -1,4 +1,4 @@
-import { mobileMediaQuery } from '../../constants/breakpoints';
+import { mobileMediaQuery } from '../../../constants/breakpoints';
 
 export default (theme) => ({
   appBar: {
