@@ -1,9 +1,17 @@
+import Paper from '@material-ui/core/Paper';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import notFoundStyles from './not-found-styles';
 
 class NotFound extends React.PureComponent {
   render() {
-    return <p>Resource not found.</p>;
+    return (
+      <Paper className={this.props.classes.paper}>
+        <Typography children="Resource not found." />
+      </Paper>
+    );
   }
 }
 
-export default NotFound;
+export default withStyles(notFoundStyles)(NotFound);
