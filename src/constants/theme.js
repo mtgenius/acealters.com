@@ -2,6 +2,10 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 export default createMuiTheme({
   palette: {
+    background: {
+      default: '#202020',
+      paper: '#303030'
+    },
     common: {
       black: '#202020',
       white: '#F0F0F0'
