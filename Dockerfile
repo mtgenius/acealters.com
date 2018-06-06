@@ -1,10 +1,11 @@
-FROM node AS build
+FROM node:latest AS builder
 LABEL Author="Charles Stover"
-WORKDIR /var/www
-COPY package*.json /var/www/
-RUN npm install
-COPY . /var/www/
+WORKDIR /usr/src/app
+COPY package.json yarn.lock /usr/src/app/
+RUN yarn install
+COPY . /usr/src/app/
 RUN npm run build
-FROM nginx
-COPY --from=build /var/www /usr/share/nginx/html
+
+FROM nginx:latest
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
