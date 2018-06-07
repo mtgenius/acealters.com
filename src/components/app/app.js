@@ -2,6 +2,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import React from 'react';
 import Route from 'react-router-dom/Route';
 import Body from './body/app-body';
+import Footer from './footer/app-footer';
 import Header from './header/app-header';
 
 class App extends React.PureComponent {
@@ -23,7 +24,8 @@ class App extends React.PureComponent {
       <Body
         key={1}
         page={page}
-      />
+      />,
+      <Footer key={2} />
     ];
   }
 
