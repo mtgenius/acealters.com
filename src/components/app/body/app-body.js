@@ -6,6 +6,7 @@ import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Contact from '../routes/contact/contact';
 import NotFound from '../routes/not-found/not-found';
+import appBodyStyles from './app-body-styles';
 
 const ComingSoon = withStyles({
   paper: {
@@ -27,32 +28,34 @@ const ComingSoon = withStyles({
 class AppBody extends React.PureComponent {
   render() {
     return (
-      <Switch>
-        <Route
-          component={ComingSoon}
-          exact
-          path="/"
-          sensitive
-          strict
-        />
-        <Route
-          component={ComingSoon}
-          exact
-          path="/gallery"
-          sensitive
-          strict
-        />
-        <Route
-          component={Contact}
-          exact
-          path="/contact"
-          sensitive
-          strict
-        />
-        <Route component={NotFound} />
-      </Switch>
+      <main className={this.props.classes.root}>
+        <Switch>
+          <Route
+            component={ComingSoon}
+            exact
+            path="/"
+            sensitive
+            strict
+          />
+          <Route
+            component={ComingSoon}
+            exact
+            path="/gallery"
+            sensitive
+            strict
+          />
+          <Route
+            component={Contact}
+            exact
+            path="/contact"
+            sensitive
+            strict
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
     );
   }
 }
 
-export default AppBody;
+export default withStyles(appBodyStyles)(AppBody);

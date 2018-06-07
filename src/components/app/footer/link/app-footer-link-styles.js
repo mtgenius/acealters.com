@@ -1,7 +1,6 @@
-export default (theme) => ({
+export default ({
   root: {
-    color: theme.palette.primary.light,
-    fontFamily: '"Architects Daughter", cursive',
-    textDecoration: 'none'
+    fontSize: '1.25em',
+    fontFamily: '"Architects Daughter", cursive'
   }
 });
