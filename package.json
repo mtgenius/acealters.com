@@ -19,6 +19,8 @@
     "build": "react-scripts build",
     "docker-build": "docker build --file Dockerfile --tag mtgenius/acealters .",
     "docker-build-proxy": "npm run docker-build --build-arg HTTP_PROXY=%HTTP_PROXY% --build-arg HTTPS_PROXY=%HTTPS_PROXY%",
+    "docker-rm": "docker stop acealters && docker rm acealters",
+    "docker-rmi": "docker rmi mtgenius/acealters",
     "docker-run": "docker run --detach --name acealters mtgenius/acealters",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
