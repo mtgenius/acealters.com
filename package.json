@@ -16,10 +16,13 @@
     "url": "https://github.com/mtgenius/acealters.git"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "docker-build": "docker build --file Dockerfile --tag mtgenius/acealters .",
+    "docker-build-proxy": "npm run docker-build --build-arg HTTP_PROXY=%HTTP_PROXY% --build-arg HTTPS_PROXY=%HTTPS_PROXY%",
+    "docker-run": "docker run --detach --name acealters mtgenius/acealters",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   },
   "version": "0.1.0"
 }

@@ -1,11 +1,15 @@
 FROM node:latest AS builder
 LABEL Author="Charles Stover"
-WORKDIR /usr/src/app
-COPY package.json yarn.lock /usr/src/app/
+WORKDIR /var/www
+COPY package.json yarn.lock ./
 RUN yarn install
-COPY . /usr/src/app/
-RUN npm run build
+COPY public public
+COPY src src
+RUN yarn build
 
 FROM nginx:latest
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+RUN rm -rf /etc/nginx/conf.d
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /var/www/build /var/www
+COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
