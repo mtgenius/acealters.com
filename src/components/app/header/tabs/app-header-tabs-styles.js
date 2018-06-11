@@ -22,7 +22,10 @@ export default (theme) => ({
     display: 'flex',
     flexGrow: 1,
     justifyContent: 'center',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    '&:hover': {
+      color: theme.palette.primary.light
+    }
   },
   scroller: {
     display: 'flex'
