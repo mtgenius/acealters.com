@@ -1,4 +1,7 @@
 export default (theme) => ({
+  root: {
+    display: 'flex'
+  },
   indicator: {
     backgroundColor: theme.palette.common.white
   },
