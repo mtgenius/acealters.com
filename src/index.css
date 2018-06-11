@@ -4,15 +4,15 @@ a {
 
 body {
   font-family: "Roboto", sans-serif;
-  min-height: 100vh;
+  height: 100%;
 }
 
 html {
-  min-height: 100vh;
+  height: 100%;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
 }

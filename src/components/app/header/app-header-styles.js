@@ -9,15 +9,22 @@ export default (theme) => ({
     alignItems: 'center',
     display: 'flex',
     flexGrow: 1,
-    fontFamily: '"Architects Daughter", cursive'
+    fontFamily: '"Architects Daughter", cursive',
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
   },
   toolbar: {
     alignItems: 'stretch',
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    padding: 0
   },
   [mobileMediaQuery]: {
+    title: {
+      paddingBottom: theme.spacing.unit,
+      paddingTop: theme.spacing.unit * 2
+    },
     toolbar: {
       flexDirection: 'column'
     }
