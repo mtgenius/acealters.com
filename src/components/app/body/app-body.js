@@ -6,6 +6,7 @@ import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Contact from '../routes/contact/contact';
 import NotFound from '../routes/not-found/not-found';
+import Shop from '../routes/shop/shop';
 import appBodyStyles from './app-body-styles';
 
 const ComingSoon = withStyles({
@@ -31,7 +32,7 @@ class AppBody extends React.PureComponent {
       <main className={this.props.classes.root}>
         <Switch>
           <Route
-            component={ComingSoon}
+            component={Shop}
             exact
             path="/"
             sensitive
