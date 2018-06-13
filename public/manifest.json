@@ -29,7 +29,7 @@
   ],
   "name": "AceAlters",
   "short_name": "AceAlters",
-  "start_url": "./index.html",
+  "start_url": "/",
   "theme_color": "#161616",
   "background_color": "#202020"
 }
