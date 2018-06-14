@@ -3,7 +3,7 @@ import thoughtseize from '../../../../assets/cards/thumbnails/thoughtseize.gif';
 export default [
   {
     image: thoughtseize,
-    price: '$40',
+    price: '$25',
     title: 'Thoughtseize',
     url: 'thoughtseize'
   }
