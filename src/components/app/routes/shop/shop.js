@@ -43,7 +43,7 @@ class Shop extends React.PureComponent {
   }
 
   get cols() {
-    return Math.ceil(window.document.body.clientWidth / 310);
+    return Math.ceil(window.document.body.clientWidth / 465);
   }
 
   handleWindowResize() {
