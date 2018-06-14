@@ -1,5 +1,4 @@
 FROM node:alpine AS builder
-LABEL Author="Charles Stover"
 WORKDIR /var/www
 COPY package.json yarn.lock ./
 RUN yarn install
@@ -8,6 +7,10 @@ COPY src src
 RUN yarn build
 
 FROM nginx:alpine
+LABEL Author="Charles Stover"
+LABEL traefik.backend="acealters"
+LABEL traefik.frontend.rule="Host:acealters.com,www.acealters.com"
+LABEL traefik.port="80"
 RUN rm -rf /etc/nginx/conf.d
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /var/www/build /var/www
