@@ -9,7 +9,17 @@ class Contact extends React.PureComponent {
   render() {
     return (
       <Paper className={this.props.classes.paper}>
-        <Typography paragraph>You may contact Ace through e-mail at <a href="mailto:ace@quisido.com">ace@quisido.com</a>.</Typography>
+        <Typography paragraph>
+          You may contact Ace through e-mail at{' '}
+          <a
+            children="ace@quisido.com"
+            href="mailto:ace@quisido.com"
+            rel="noopener noreferrer"
+            target="_blank"
+            title="E-mail ace@quisido.com"
+          />
+          .
+        </Typography>
         <Typography><Link to="/">Return to the Shop.</Link></Typography>
       </Paper>
     );

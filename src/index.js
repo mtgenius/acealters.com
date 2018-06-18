@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import App from './components/app/app';
 import theme from './constants/theme';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './register-service-worker';
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
@@ -15,4 +15,5 @@ ReactDOM.render(
   </MuiThemeProvider>,
   document.getElementById('root')
 );
+
 registerServiceWorker();
