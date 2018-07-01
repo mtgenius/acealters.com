@@ -54,7 +54,7 @@ class AppHeaderTabs extends React.PureComponent {
         >
           <Tab
             classes={this.tabClasses}
-            disabled={this.props.page === 'home'}
+            disabled={this.props.page === 'gallery'}
             label={this.link('/', 'Gallery')}
             tabIndex={1}
             value="gallery"
