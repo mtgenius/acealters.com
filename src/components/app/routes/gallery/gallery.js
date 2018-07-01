@@ -113,7 +113,7 @@ class Gallery extends React.PureComponent {
                 cellHeight={155}
                 children={shopCards.map(this.mapCards)}
                 cols={this.state.cols}
-                spacing={1}
+                spacing={16}
               />
             </Paper> :
             null
@@ -128,7 +128,7 @@ class Gallery extends React.PureComponent {
             cellHeight={155}
             children={galleryCards.map(this.mapCards)}
             cols={this.state.cols}
-            spacing={1}
+            spacing={16}
           />
         </Paper>
       </React.Fragment>
