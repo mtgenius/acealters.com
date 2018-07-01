@@ -55,22 +55,15 @@ class AppHeaderTabs extends React.PureComponent {
           <Tab
             classes={this.tabClasses}
             disabled={this.props.page === 'home'}
-            label={this.link('/', 'Shop')}
+            label={this.link('/', 'Gallery')}
             tabIndex={1}
-            value="home"
-          />
-          <Tab
-            classes={this.tabClasses}
-            disabled={this.props.page === 'gallery'}
-            label={this.link('/gallery', 'Gallery')}
-            tabIndex={2}
             value="gallery"
           />
           <Tab
             classes={this.tabClasses}
             disabled={this.props.page === 'contact'}
             label={this.link('/contact', 'Contact')}
-            tabIndex={3}
+            tabIndex={2}
             value="contact"
           />
         </Tabs>

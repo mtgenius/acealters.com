@@ -5,26 +5,9 @@ import React from 'react';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import Contact from '../routes/contact/contact';
+import Gallery from '../routes/gallery/gallery';
 import NotFound from '../routes/not-found/not-found';
-import Shop from '../routes/shop/shop';
 import appBodyStyles from './app-body-styles';
-
-const ComingSoon = withStyles({
-  paper: {
-    margin: '1em',
-    padding: '1em'
-  }
-})(
-  class ComingSoon extends React.PureComponent {
-    render() {
-      return (
-        <Paper className={this.props.classes.paper}>
-          <Typography>Coming soon...</Typography>
-        </Paper>
-      );
-    }
-  }
-);
 
 class AppBody extends React.PureComponent {
   render() {
@@ -32,16 +15,9 @@ class AppBody extends React.PureComponent {
       <main className={this.props.classes.root}>
         <Switch>
           <Route
-            component={Shop}
+            component={Gallery}
             exact
             path="/"
-            sensitive
-            strict
-          />
-          <Route
-            component={ComingSoon}
-            exact
-            path="/gallery"
             sensitive
             strict
           />

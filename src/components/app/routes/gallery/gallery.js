@@ -1,3 +1,5 @@
+import cards from 'cards';
+
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -6,14 +8,24 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import Link from 'react-router-dom/Link';
-import cards from './shop-cards';
-import shopStyles from './shop-styles';
+import galleryStyles from './gallery-styles';
 
 const EVENT_LISTENER_OPTIONS = {
   passive: true
 };
 
-class Shop extends React.PureComponent {
+const galleryCards = [];
+const shopCards = [];
+for (const card of cards) {
+  if (card.sold) {
+    galleryCards.push(card);
+  }
+  else {
+    shopCards.push(card);
+  }
+}
+
+class Gallery extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -54,6 +66,10 @@ class Shop extends React.PureComponent {
   }
 
   mapCards(card) {
+    const actionIcon =
+      card.price === null ?
+       'N/A' :
+        '$' + card.price;
     return (
       <GridListTile
         cols={1}
@@ -66,7 +82,7 @@ class Shop extends React.PureComponent {
           src={card.image}
         />
         <GridListTileBar
-          actionIcon={card.price}
+          actionIcon={actionIcon}
           classes={this.gridListTitleBarClasses({
             actionIcon: this.props.classes.actionIcon
           })}
@@ -78,30 +94,46 @@ class Shop extends React.PureComponent {
   }
 
   render() {
-    return [
-      <Paper
-        className={this.props.classes.paper}
-        key={0}
-      >
-        <Typography>
-          Welcome to AceAlters, where Ace alters Magic cards.{' '}
-          You are viewing the Shop, a list of cards that are <strong>for sale</strong>.{' '}
-          You may visit the <Link to="/gallery" title="AceAlters Gallery">Gallery</Link> to see a display of all other cards.
-        </Typography>
-      </Paper>,
-      <Paper
-        className={this.props.classes.paper}
-        key={1}
-      >
-        <GridList
-          cellHeight={155}
-          children={cards.map(this.mapCards)}
-          cols={this.state.cols}
-          spacing={1}
-        />
-      </Paper>
-    ];
+    return (
+      <React.Fragment>
+        <Paper className={this.props.classes.paper}>
+          <Typography>
+            Welcome to AceAlters, where Ace alters Magic cards.
+          </Typography>
+        </Paper>
+        {
+          shopCards.length > 0 ?
+            <Paper className={this.props.classes.paper}>
+              <Typography
+                children="Shop / For Sale"
+                className={this.props.classes.title}
+                variant="title"
+              />
+              <GridList
+                cellHeight={155}
+                children={shopCards.map(this.mapCards)}
+                cols={this.state.cols}
+                spacing={1}
+              />
+            </Paper> :
+            null
+        }
+        <Paper className={this.props.classes.paper}>
+          <Typography
+            children="Gallery / Not For Sale"
+            className={this.props.classes.title}
+            variant="title"
+          />
+          <GridList
+            cellHeight={155}
+            children={galleryCards.map(this.mapCards)}
+            cols={this.state.cols}
+            spacing={1}
+          />
+        </Paper>
+      </React.Fragment>
+    );
   }
 }
 
-export default withStyles(shopStyles)(Shop);
+export default withStyles(galleryStyles)(Gallery);
