@@ -20,7 +20,7 @@ class Contact extends React.PureComponent {
           />
           .
         </Typography>
-        <Typography><Link to="/">Return to the Shop.</Link></Typography>
+        <Typography><Link to="/">Return to the Gallery.</Link></Typography>
       </Paper>
     );
   }
