@@ -16,7 +16,7 @@ class App extends React.PureComponent {
   children(props) {
     const page =
       props.match.isExact ?
-        props.match.url.replace(/^\//, '') || 'home' :
+        props.match.url.replace(/^\//, '') || 'gallery' :
         null;
     return [
       <Header
