@@ -6,6 +6,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
+import memoizeClasses from 'memoize-classes';
 import React from 'react';
 import Link from 'react-router-dom/Link';
 import galleryStyles from './gallery-styles';
@@ -13,6 +14,12 @@ import galleryStyles from './gallery-styles';
 const EVENT_LISTENER_OPTIONS = {
   passive: true
 };
+
+const HEIGHT = 278; // 139 * 2
+
+const SPACING = 16;
+
+const WIDTH = 446; // 223 * 2
 
 const galleryCards = [];
 const shopCards = [];
@@ -39,8 +46,9 @@ class Gallery extends React.PureComponent {
       return this.gridListTitleBarClassesCache;
     };
     this.gridListTitleBarClassesCache = {};
-    this.mapCards = this.mapCards.bind(this);
     this.handleWindowResize = this.handleWindowResize.bind(this);
+    this.mapCards = this.mapCards.bind(this);
+    this.memoizeGridListTileClasses = memoizeClasses();
     this.state = {
       cols: this.cols
     };
@@ -55,7 +63,7 @@ class Gallery extends React.PureComponent {
   }
 
   get cols() {
-    return Math.ceil(window.document.body.clientWidth / 465);
+    return WIDTH * Math.ceil(window.document.body.clientWidth / (WIDTH + SPACING));
   }
 
   handleWindowResize() {
@@ -72,9 +80,12 @@ class Gallery extends React.PureComponent {
         '$' + card.price;
     return (
       <GridListTile
-        cols={1}
+        classes={this.memoizeGridListTileClasses({
+          imgFullWidth: this.props.classes.imgFullWidth
+        })}
+        cols={WIDTH}
         component={Link}
-        rows={2}
+        rows={HEIGHT}
         to={'./' + card.url}
       >
         <img
@@ -95,6 +106,7 @@ class Gallery extends React.PureComponent {
   }
 
   render() {
+    console.log(this.state.cols);
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
@@ -111,10 +123,10 @@ class Gallery extends React.PureComponent {
                 variant="title"
               />
               <GridList
-                cellHeight={155}
+                cellHeight={1}
                 children={shopCards.map(this.mapCards)}
                 cols={this.state.cols}
-                spacing={16}
+                spacing={SPACING}
               />
             </Paper> :
             null
@@ -126,10 +138,10 @@ class Gallery extends React.PureComponent {
             variant="title"
           />
           <GridList
-            cellHeight={155}
+            cellHeight={1}
             children={galleryCards.map(this.mapCards)}
             cols={this.state.cols}
-            spacing={16}
+            spacing={SPACING}
           />
         </Paper>
       </React.Fragment>

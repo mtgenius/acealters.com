@@ -2,8 +2,9 @@ export default (theme) => ({
   actionIcon: {
     paddingRight: theme.spacing.unit * 2
   },
-  image: {
-    transform: 'translateY(-45%)'
+  imgFullWidth: {
+    top: 0,
+    transform: 'translateY(-11.25%)'
   },
   paper: {
     margin: '1em',

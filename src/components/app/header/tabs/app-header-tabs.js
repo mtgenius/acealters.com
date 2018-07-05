@@ -48,6 +48,7 @@ class AppHeaderTabs extends React.PureComponent {
     return (
       <nav className={this.props.classes.root}>
         <Tabs
+          centered
           classes={this.tabsClasses}
           fullWidth
           value={this.props.page || false}
