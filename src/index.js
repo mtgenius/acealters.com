@@ -7,13 +7,23 @@ import theme from './constants/theme';
 import './index.css';
 import registerServiceWorker from './register-service-worker';
 
-ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Route component={App} />
-    </BrowserRouter>
-  </MuiThemeProvider>,
-  document.getElementById('root')
-);
+const render = () => {
+  ReactDOM.render(
+    <MuiThemeProvider theme={theme}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Route component={App} />
+      </BrowserRouter>
+    </MuiThemeProvider>,
+    document.getElementById('root')
+  );
+};
 
 registerServiceWorker();
+
+render();
+
+if (module.hot) {
+  module.hot.accept('./components/app/app', () => {
+    render();
+  });
+}

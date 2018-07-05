@@ -75,11 +75,11 @@ class Gallery extends React.PureComponent {
         cols={1}
         component={Link}
         rows={2}
-        to={'/cards/' + card.url}
+        to={'./' + card.url}
       >
         <img
           alt={card.title}
-          src={card.image}
+          src={card.thumbnail}
         />
         <GridListTileBar
           actionIcon={actionIcon}

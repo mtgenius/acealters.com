@@ -8,7 +8,7 @@ class NotFound extends React.PureComponent {
   render() {
     return (
       <Paper className={this.props.classes.paper}>
-        <Typography children="Resource not found." />
+        <Typography children="The page you requested could not be found." />
       </Paper>
     );
   }
