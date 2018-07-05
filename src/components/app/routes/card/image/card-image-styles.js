@@ -7,7 +7,8 @@ export default {
     maxWidth: '100%'
   },
   link: {
+    display: 'inline-block',
     margin: 'auto',
-    maxWidth: '100%'
+    maxWidth: 1024
   }
 };
