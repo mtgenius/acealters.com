@@ -79,6 +79,7 @@ class Gallery extends React.PureComponent {
       >
         <img
           alt={card.title}
+          className={this.props.classes.image}
           src={card.thumbnail}
         />
         <GridListTileBar
