@@ -1,10 +1,8 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
 import withStyles from '@material-ui/core/styles/withStyles';
 import React from 'react';
 import Route from 'react-router-dom/Route';
 import appStyles from './app-styles';
 import Body from './body/app-body';
-import Footer from './footer/app-footer';
 import Header from './header/app-header';
 
 class App extends React.PureComponent {
@@ -22,7 +20,6 @@ class App extends React.PureComponent {
       <React.Fragment>
         <Header page={page} />
         <Body page={page} />
-        <Footer />
       </React.Fragment>
     );
   }
@@ -30,7 +27,6 @@ class App extends React.PureComponent {
   render() {
     return (
       <React.Fragment>
-        <CssBaseline />
         <Route
           children={this.children}
           path="(/|/contact|/gallery)?"
