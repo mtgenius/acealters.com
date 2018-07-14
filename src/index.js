@@ -12,11 +12,25 @@ const footer = [
   }
 ];
 
+const nav = [
+  {
+    path: '/',
+    title: 'Gallery'
+  },
+  {
+    path: '/contact',
+    title: 'Contact'
+  }
+];
+
 ReactDOM.render(
   <ReactPortfolio
     app={App}
     copyright={2016}
     footer={footer}
+    hue={16}
+    nav={nav}
+    title="AceAlters.com"
   />,
   document.getElementById('root')
 );

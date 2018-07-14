@@ -106,7 +106,6 @@ class Gallery extends React.PureComponent {
   }
 
   render() {
-    console.log(this.state.cols);
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
