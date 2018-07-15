@@ -6,8 +6,8 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
-import memoizeClasses from 'memoize-classes';
 import React from 'react';
+import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
 import galleryStyles from './gallery-styles';
 
@@ -15,14 +15,21 @@ const EVENT_LISTENER_OPTIONS = {
   passive: true
 };
 
+const galleryCards = [];
+
+const gridListTileClasses = createObjectProp();
+
+const gridListTitleBarClasses = createObjectProp();
+
 const HEIGHT = 278; // 139 * 2
+
+const shopCards = [];
 
 const SPACING = 16;
 
 const WIDTH = 446; // 223 * 2
 
-const galleryCards = [];
-const shopCards = [];
+// Generate gallery and shop.
 for (const card of cards) {
   if (card.sold) {
     galleryCards.push(card);
@@ -36,19 +43,8 @@ class Gallery extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.gridListTitleBarClasses = (classes) => {
-      if (classes.actionIcon !== this.gridListTitleBarClassesCache.actionIcon) {
-        this.gridListTitleBarClassesCache = {
-          ...this.gridListTitleBarClassesCache,
-          actionIcon: classes.actionIcon
-        };
-      }
-      return this.gridListTitleBarClassesCache;
-    };
-    this.gridListTitleBarClassesCache = {};
     this.handleWindowResize = this.handleWindowResize.bind(this);
     this.mapCards = this.mapCards.bind(this);
-    this.memoizeGridListTileClasses = memoizeClasses();
     this.state = {
       cols: this.cols
     };
@@ -80,7 +76,7 @@ class Gallery extends React.PureComponent {
         '$' + card.price;
     return (
       <GridListTile
-        classes={this.memoizeGridListTileClasses({
+        classes={gridListTileClasses({
           imgFullWidth: this.props.classes.imgFullWidth
         })}
         cols={WIDTH}
@@ -95,7 +91,7 @@ class Gallery extends React.PureComponent {
         />
         <GridListTileBar
           actionIcon={actionIcon}
-          classes={this.gridListTitleBarClasses({
+          classes={gridListTitleBarClasses({
             actionIcon: this.props.classes.actionIcon
           })}
           title={card.title}
@@ -106,7 +102,6 @@ class Gallery extends React.PureComponent {
   }
 
   render() {
-    console.log(this.state.cols);
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
@@ -116,7 +111,10 @@ class Gallery extends React.PureComponent {
         </Paper>
         {
           shopCards.length > 0 ?
-            <Paper className={this.props.classes.paper}>
+            <Paper
+              className={this.props.classes.paper}
+              key="shop"
+            >
               <Typography
                 children="Shop / For Sale"
                 className={this.props.classes.title}
@@ -131,7 +129,10 @@ class Gallery extends React.PureComponent {
             </Paper> :
             null
         }
-        <Paper className={this.props.classes.paper}>
+        <Paper
+          className={this.props.classes.paper}
+          key="gallery"
+        >
           <Typography
             children="Gallery / Not For Sale"
             className={this.props.classes.title}
