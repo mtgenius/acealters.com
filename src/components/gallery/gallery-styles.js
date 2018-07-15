@@ -1,5 +1,6 @@
 export default (theme) => ({
   actionIcon: {
+    color: theme.palette.primary.light,
     paddingRight: theme.spacing.unit * 2
   },
   imgFullWidth: {
