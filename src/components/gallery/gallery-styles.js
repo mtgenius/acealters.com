@@ -3,6 +3,14 @@ export default (theme) => ({
     color: theme.palette.primary.light,
     paddingRight: theme.spacing.unit * 2
   },
+  gridListTile: {
+    '&:hover $gridListTileBar': {
+      display: 'flex'
+    }
+  },
+  gridListTileBar: {
+    display: 'none'
+  },
   imgFullWidth: {
     top: 0,
     transform: 'translateY(-11.25%)'

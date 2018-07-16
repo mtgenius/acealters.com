@@ -70,14 +70,11 @@ class Gallery extends React.PureComponent {
   }
 
   mapCards(card) {
-    const actionIcon =
-      card.price === null ?
-       'N/A' :
-        '$' + card.price;
     return (
       <GridListTile
         classes={gridListTileClasses({
-          imgFullWidth: this.props.classes.imgFullWidth
+          imgFullWidth: this.props.classes.imgFullWidth,
+          root: this.props.classes.gridListTile
         })}
         cols={WIDTH}
         component={Link}
@@ -90,9 +87,9 @@ class Gallery extends React.PureComponent {
           src={card.thumbnail}
         />
         <GridListTileBar
-          actionIcon={actionIcon}
           classes={gridListTitleBarClasses({
-            actionIcon: this.props.classes.actionIcon
+            actionIcon: this.props.classes.actionIcon,
+            root: this.props.classes.gridListTileBar
           })}
           title={card.title}
           titlePosition="top"
