@@ -44,16 +44,21 @@ const routes = [
   }
 ];
 
+const social = {
+  youtube: 'zaxxane'
+};
+
 class App extends React.PureComponent {
   render() {
     return (
       <ReactPortfolio
         copyright={2016}
         footer={footer}
-        hue={16}
+        hue={0}
         nav={nav}
         routes={routes}
-        title="AceAlters.com"
+        social={social}
+        title="AceAlters"
       />
     );
   }
