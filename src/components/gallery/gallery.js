@@ -17,15 +17,11 @@ const EVENT_LISTENER_OPTIONS = {
 
 const galleryCards = [];
 
-const gridListTileClasses = createObjectProp();
-
-const gridListTitleBarClasses = createObjectProp();
-
 const HEIGHT = 278; // 139 * 2
 
 const shopCards = [];
 
-const SPACING = 16;
+const SPACING = 24;
 
 const WIDTH = 446; // 223 * 2
 
@@ -43,6 +39,8 @@ class Gallery extends React.PureComponent {
 
   constructor(props) {
     super(props);
+    this.gridListTileClasses = createObjectProp();
+    this.gridListTitleBarClasses = createObjectProp();
     this.handleWindowResize = this.handleWindowResize.bind(this);
     this.mapCards = this.mapCards.bind(this);
     this.state = {
@@ -70,14 +68,12 @@ class Gallery extends React.PureComponent {
   }
 
   mapCards(card) {
-    const actionIcon =
-      card.price === null ?
-       'N/A' :
-        '$' + card.price;
     return (
       <GridListTile
-        classes={gridListTileClasses({
-          imgFullWidth: this.props.classes.imgFullWidth
+        classes={this.gridListTileClasses({
+          imgFullWidth: this.props.classes.imgFullWidth,
+          root: this.props.classes.gridListTileRoot,
+          tile: this.props.classes.gridListTileTile
         })}
         cols={WIDTH}
         component={Link}
@@ -90,9 +86,9 @@ class Gallery extends React.PureComponent {
           src={card.thumbnail}
         />
         <GridListTileBar
-          actionIcon={actionIcon}
-          classes={gridListTitleBarClasses({
-            actionIcon: this.props.classes.actionIcon
+          classes={this.gridListTitleBarClasses({
+            actionIcon: this.props.classes.actionIcon,
+            root: this.props.classes.gridListTileBar
           })}
           title={card.title}
           titlePosition="top"
@@ -105,9 +101,7 @@ class Gallery extends React.PureComponent {
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
-          <Typography>
-            Welcome to AceAlters, where Ace alters Magic cards.
-          </Typography>
+          <Typography children="Welcome to AceAlters, where Ace alters Magic cards." />
         </Paper>
         {
           shopCards.length > 0 ?
