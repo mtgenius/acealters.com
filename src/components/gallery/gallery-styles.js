@@ -20,15 +20,20 @@ export default (theme) => ({
       display: 'flex'
     },
     '&:hover $imgFullWidth': {
-      // transform: 'translateX(-1px) translateY(calc(-11.25% - 1px))'
+      transform: 'translateY(-5.625%) !important'
     }
   },
   gridListTileTile: {
     boxShadow: theme.shadows[2]
   },
+  imgBodyShown: {
+    transform: 'scale(1.5) !important'
+  },
   imgFullWidth: {
     top: 0,
-    transform: 'translateY(-11.25%)'
+    transform: 'translateY(-12.5%)',
+    transitionProperty: 'transform',
+    transitionDuration: '0.1s'
   },
   paper: {
     margin: '1em',

@@ -1,4 +1,5 @@
 /.git
+/.vscode
 /build
 /node_modules
 .dockerignore

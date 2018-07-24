@@ -17,13 +17,13 @@ const EVENT_LISTENER_OPTIONS = {
 
 const galleryCards = [];
 
-const HEIGHT = 278; // 139 * 2
+const HEIGHT = 223;
 
 const shopCards = [];
 
 const SPACING = 24;
 
-const WIDTH = 446; // 223 * 2
+const WIDTH = 223;
 
 // Generate gallery and shop.
 for (const card of cards) {
@@ -41,10 +41,12 @@ class Gallery extends React.PureComponent {
     super(props);
     this.gridListTileClasses = createObjectProp();
     this.gridListTitleBarClasses = createObjectProp();
+    this.gridListWrapper = null;
+    this.handleGridListWrapperRef = this.handleGridListWrapperRef.bind(this);
     this.handleWindowResize = this.handleWindowResize.bind(this);
     this.mapCards = this.mapCards.bind(this);
     this.state = {
-      cols: this.cols
+      cols: 0
     };
   }
 
@@ -57,7 +59,16 @@ class Gallery extends React.PureComponent {
   }
 
   get cols() {
-    return WIDTH * Math.ceil(window.document.body.clientWidth / (WIDTH + SPACING));
+    if (!this.gridListWrapper) {
+      return 0;
+    }
+    const maxWidth = Math.max(0, this.gridListWrapper.clientWidth - WIDTH);
+    return WIDTH * (Math.floor(maxWidth / (WIDTH + SPACING)) + 1);
+  }
+
+  handleGridListWrapperRef(gridListWrapper) {
+    this.gridListWrapper = gridListWrapper;
+    this.handleWindowResize();
   }
 
   handleWindowResize() {
@@ -71,7 +82,9 @@ class Gallery extends React.PureComponent {
     return (
       <GridListTile
         classes={this.gridListTileClasses({
-          imgFullWidth: this.props.classes.imgFullWidth,
+          imgFullWidth:
+            this.props.classes.imgFullWidth +
+            (card.bodyShown ? ' ' + this.props.classes.imgBodyShown : ''),
           root: this.props.classes.gridListTileRoot,
           tile: this.props.classes.gridListTileTile
         })}
@@ -85,14 +98,18 @@ class Gallery extends React.PureComponent {
           className={this.props.classes.image}
           src={card.thumbnail}
         />
-        <GridListTileBar
-          classes={this.gridListTitleBarClasses({
-            actionIcon: this.props.classes.actionIcon,
-            root: this.props.classes.gridListTileBar
-          })}
-          title={card.title}
-          titlePosition="top"
-        />
+        {
+          card.titleShown === false ?
+            <GridListTileBar
+              classes={this.gridListTitleBarClasses({
+                actionIcon: this.props.classes.actionIcon,
+                root: this.props.classes.gridListTileBar
+              })}
+              title={card.title}
+              titlePosition="top"
+            /> :
+            null
+        }
       </GridListTile>
     );
   }
@@ -132,12 +149,19 @@ class Gallery extends React.PureComponent {
             className={this.props.classes.title}
             variant="title"
           />
-          <GridList
-            cellHeight={1}
-            children={galleryCards.map(this.mapCards)}
-            cols={this.state.cols}
-            spacing={SPACING}
-          />
+          <div ref={this.handleGridListWrapperRef}>
+            {
+              this.state.cols ?
+                <GridList
+                  cellHeight={1}
+                  children={galleryCards.map(this.mapCards)}
+                  cols={this.state.cols}
+                  component="div"
+                  spacing={SPACING}
+                /> :
+                null
+            }
+          </div>
         </Paper>
       </React.Fragment>
     );
