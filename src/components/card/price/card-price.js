@@ -30,10 +30,11 @@ class CardPrice extends React.PureComponent {
 
     return (
       <Typography
+        className={this.props.classes.root}
         paragraph
         title={price}
+        variant="subheading"
       >
-        <strong>Price:</strong>{' '}
         <span
           children={price}
           className={this.priceClassName}

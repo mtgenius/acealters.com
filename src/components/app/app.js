@@ -14,7 +14,7 @@ const footer = [
   }
 ];
 
-const nav = [
+const nav = [/*
   {
     path: '/',
     title: 'Gallery'
@@ -23,7 +23,7 @@ const nav = [
     path: '/contact',
     title: 'Contact'
   }
-];
+*/];
 
 const routes = [
   {
