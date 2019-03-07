@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from './register-service-worker';
+import { unregister } from './register-service-worker';
 import App from './components/app/app';
 
 ReactDOM.render(
@@ -12,4 +12,4 @@ if (module.hot) {
   module.hot.accept();
 }
 
-registerServiceWorker();
+unregister();
