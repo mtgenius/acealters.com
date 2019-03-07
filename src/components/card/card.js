@@ -1,15 +1,14 @@
-import cards from 'cards';
-
 import Paper from '@material-ui/core/Paper';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import cards from '../../assets/cards';
 import CardDescription from './description/card-description';
 import CardImage from './image/card-image';
 import CardPrice from './price/card-price';
 import cardStyles from './card-styles';
 
-const card2state = (card) => ({
+const card2state = card => ({
   description: null,
   price: null,
   sold: false,
@@ -34,36 +33,29 @@ class Card extends React.PureComponent {
     return card2state(cards[index]);
   }
 
-  get date() {
-    return 'Altered on ' + this.state.date + '.';
-  }
-
-  get title() {
-    return this.state.title + ' (' + this.state.set + ')';
-  }
-
   render() {
     return (
       <Paper className={this.props.classes.root}>
         <Typography
-          children={this.title}
           className={this.props.classes.title}
           paragraph
           variant="title"
-        />
+        >
+          {this.state.title} ({this.state.set})
+        </Typography>
         <CardPrice
           price={this.state.price}
           sold={this.state.sold}
         />
         <CardDescription children={this.state.description} />
         <CardImage
-          src={this.state.image}
+          href={this.state.images[2] || this.state.images[1]}
+          src={this.state.images[1]}
           title={this.state.title}
         />
-        <Typography
-          children={this.date}
-          className={this.props.classes.date}
-        />
+        <Typography className={this.props.classes.date}>
+          Altered on {this.state.date}.
+        </Typography>
       </Paper>
     );
   }

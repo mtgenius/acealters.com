@@ -8,8 +8,9 @@ class CardImage extends React.PureComponent {
       <div className={this.props.classes.root}>
         <a
           className={this.props.classes.link}
-          href={this.props.src}
+          href={this.props.href}
           rel="noopener noreferrer"
+          target="_blank"
           title={this.props.title}
         >
           <img

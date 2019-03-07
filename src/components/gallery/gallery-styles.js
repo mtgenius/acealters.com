@@ -20,7 +20,7 @@ export default (theme) => ({
       display: 'flex'
     },
     '&:hover $imgFullWidth': {
-      transform: 'translateY(-5.625%) !important'
+      transform: 'translateY(-4.125%) !important'
     }
   },
   gridListTileTile: {

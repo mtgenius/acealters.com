@@ -1,5 +1,3 @@
-import cards from 'cards';
-
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -9,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import createObjectProp from 'react-object-prop';
 import Link from 'react-router-dom/Link';
+import cards from '../../assets/cards';
 import galleryStyles from './gallery-styles';
 
 const EVENT_LISTENER_OPTIONS = {
@@ -96,7 +95,7 @@ class Gallery extends React.PureComponent {
         <img
           alt={card.title}
           className={this.props.classes.image}
-          src={card.thumbnail}
+          src={card.images[0]}
         />
         {
           card.titleShown === false ?
@@ -118,7 +117,19 @@ class Gallery extends React.PureComponent {
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
-          <Typography children="Welcome to AceAlters, where Ace alters Magic cards." />
+          <Typography>
+            AceAlters is a gallery of cards from the{' '}
+            <em>Magic: The Gathering</em>{' '}
+            collectible card game as altered by{' '}
+            <a
+              href="https://quisido.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Ace Quisido's Portfolio"
+            >
+              Ace Quisido
+            </a>.
+          </Typography>
         </Paper>
         {
           shopCards.length > 0 ?

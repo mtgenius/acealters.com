@@ -1,7 +1,6 @@
-import cards from 'cards';
-
 import React from 'react';
 import ReactPortfolio from 'react-portfolio';
+import cards from '../../assets/cards';
 import Card from '../card/card';
 import Contact from '../contact/contact';
 import Gallery from '../gallery/gallery';
@@ -11,7 +10,7 @@ const footer = [
   {
     children: 'Ace Quisido',
     href: 'https://quisido.com/',
-    title: 'Quisido.com'
+    title: 'Ace Quisido\'s Portfolio'
   }
 ];
 
@@ -45,7 +44,11 @@ const routes = [
 ];
 
 const social = {
-  youtube: 'zaxxane'
+  email: 'ace@quisido.com',
+  linkedin: 'acequisido',
+  // medium: 'Ace Quisido',
+  // skype: 'ace-quisido',
+  twitter: 'AceQuisido',
 };
 
 class App extends React.PureComponent {
