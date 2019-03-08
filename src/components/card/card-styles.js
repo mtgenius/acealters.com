@@ -11,8 +11,8 @@ export default {
   },
   backIcon: {
     fontSize: '1.5em',
+    lineHeight: '0',
     marginTop: '-0.0625em',
-    paddingBottom: '0.5em',
     paddingLeft: '0.25em',
     transform: 'rotate(180deg)',
   },
