@@ -50,7 +50,7 @@ class Card extends React.PureComponent {
           to="/"
         >
           <span className={this.props.classes.backIcon}>
-            🡄
+            ➠
           </span>{' '}
           Gallery
         </Link>

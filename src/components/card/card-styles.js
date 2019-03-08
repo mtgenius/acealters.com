@@ -1,33 +1,28 @@
 export default {
   root: {
     margin: '1em',
-    padding: '3em 1em 1em 1em',
+    padding: '1em',
     position: 'relative',
   },
   back: {
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    left: '1em',
-    position: 'absolute',
-    top: '0.5em',
   },
   backIcon: {
     fontSize: '1.5em',
-    marginTop: '-0.125em',
-    paddingRight: '0.25em',
+    marginTop: '-0.0625em',
+    paddingBottom: '0.5em',
+    paddingLeft: '0.25em',
+    transform: 'rotate(180deg)',
   },
   comparison: {
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     margin: '4em auto 5em auto',
     maxWidth: '446px',
-    '& > div': {
-      textAlign: 'center',
-      '& > span': {
-        fontSize: '1em',
-      },
-    },
   },
   date: {
     paddingTop: '1em',
