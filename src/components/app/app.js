@@ -28,16 +28,18 @@ const nav = [/*
 const routes = [
   {
     component: Card,
-    path: '/:card(' + cards.map((card) => card.url).join('|') + ')'
+    path: '/:card(' + cards.map((card) => card.url).join('|') + ')/'
   },
   {
     component: Gallery,
     path: '/'
   },
+  /*
   {
     component: Contact,
     path: '/contact'
   },
+  */
   {
     component: NotFound
   }

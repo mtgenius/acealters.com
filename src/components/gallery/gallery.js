@@ -90,7 +90,7 @@ class Gallery extends React.PureComponent {
         cols={WIDTH}
         component={Link}
         rows={HEIGHT}
-        to={'./' + card.url}
+        to={'./' + card.url + '/'}
       >
         <img
           alt={card.title}
