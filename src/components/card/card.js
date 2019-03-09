@@ -42,7 +42,7 @@ class Card extends React.PureComponent {
   }
 
   render() {
-    document.title = this.state.title;
+    document.title = `${this.state.title} (${this.state.set})`;
     return (
       <Paper className={this.props.classes.root}>
         <Link
