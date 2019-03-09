@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPortfolio from 'react-portfolio';
 import cards from '../../assets/cards';
 import Card from '../card/card';
-import Contact from '../contact/contact';
+// import Contact from '../contact/contact';
 import Gallery from '../gallery/gallery';
 import NotFound from '../not-found/not-found';
 
