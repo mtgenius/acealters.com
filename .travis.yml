@@ -10,7 +10,7 @@ install:
 - cd ../..
 script:
 - yarn build
-- yarn build-routes
+- yarn build-plus
 deploy:
   # fqdn: acealters.com
   github-token:
