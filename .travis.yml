@@ -12,7 +12,7 @@ script:
 - yarn build
 - yarn build-plus
 deploy:
-  # fqdn: acealters.com
+  fqdn: acealters.com
   github-token:
     secure: WypQQo7QpCduzjX/Y4uWdYKz+w11P5Bgp8QnOTRW1iokngIfM72LYKHLrmPhz34+ulNZfuvjDeKOO7Zcx0+zFjyVs0m3PCH1TZ7tKip3hrpKBJXukYe5sYPKq8B+eTb0NGhD8hvXHESlrOREsvMhPd13gi7tcUe/fwxO11J+0WLy1jTn1kIkxd1RsNTg6qJba60Z0IhGRgE3a10lJPpFjU+7+F/k8RDgI86Ej9a6cvEVWNKeBMBp9nL3JMSUQ7VxgwgT8lFxbtknSfepqAXLSZuf/DiANaiuQJwg/ye2bIVD+Hb3W+LvxYdTwapgw+x6tipTGiwrxln/woQJCPABudYolQchq+SOePd08VzzHM/ouJMEswNasroJSqtpJmbBeJ0tbL5giwr3VnB7SOgxH/VrixhlJHygeVTKaabj7nhYThgx0RdpJgGLjgWRBuv+TQ/IRn6HJ9g7WDZIu+BSz9Lg6uJw03m/FUD/+h9Hidv+VsGGPlfm3dTesMyps2y31Npwo3jkH9JX2BofKa9/10ZmYmqfEr+aR/ghoS9tQXNiASRFGNWJNQ6y7iCp9hekJlmA0Ev82AngeImQobl1Op6E+7430MkAPUs8aw2APo27DcHOYlq6Yi5YgIc1SDkMvYBUKnXEui8bDu1E088xmXB9ArJJZ919FMdreB4QVMg=
   keep-history: true
