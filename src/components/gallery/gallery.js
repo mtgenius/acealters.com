@@ -114,6 +114,7 @@ class Gallery extends React.PureComponent {
   }
 
   render() {
+    document.title = 'AceAlters';
     return (
       <React.Fragment>
         <Paper className={this.props.classes.paper}>
