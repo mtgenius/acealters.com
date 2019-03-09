@@ -3,9 +3,14 @@ node_js: 11
 branches:
   only: master
 cache: yarn
-install: yarn
+install:
+- yarn
+- cd scripts/build-plus
+- yarn
+- cd ../..
 script:
 - yarn build
+- yarn build-routes
 deploy:
   # fqdn: acealters.com
   github-token:

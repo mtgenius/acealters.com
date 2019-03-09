@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "react-scripts build",
+    "build-plus": "node scripts/build-plus/front-matter.js",
     "docker-build": "docker build --file Dockerfile --tag mtgenius/acealters .",
     "docker-build-proxy": "npm run docker-build --build-arg HTTP_PROXY=%HTTP_PROXY% --build-arg HTTPS_PROXY=%HTTPS_PROXY%",
     "docker": "npm run docker-rm && npm run docker-rmi && npm run docker-build && npm run docker-run-publish",
