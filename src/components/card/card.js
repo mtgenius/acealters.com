@@ -38,7 +38,8 @@ class Card extends React.PureComponent {
     if (this.state.original) {
       return this.state.original;
     }
-    return `https://i.mtgeni.us/${this.state.multiverseid}.jpg`;
+    // return `https://i.mtgeni.us/${this.state.multiverseid}.jpg`;
+    return `https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${this.state.multiverseid}&type=card`;
   }
 
   render() {
