@@ -1,4 +1,4 @@
-# [AceAlters](https://acealters.com/) [![build](https://travis-ci.com/mtgenius/acealters.svg?branch=master)](https://travis-ci.com/mtgenius/acealters)
+# [AceAlters](https://acealters.com/) [![build](https://travis-ci.com/mtgenius/acealters.com.svg?branch=master)](https://travis-ci.com/mtgenius/acealters.com)
 
 AceAlters is a gallery of cards from the _Magic: The Gathering_ collectible
 card game as altered by [Ace Quisido](https://quisido.com/).
