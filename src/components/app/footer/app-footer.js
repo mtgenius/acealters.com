@@ -16,8 +16,7 @@ export default withStyles(appFooterStyles)(
           variant="caption"
         >
           &copy; 2016-{year}{' '}
-          <Link children="Ace Quisido" href="https://quisido.com/" title="Quisido.com" /> and{' '}
-          <Link children="Charles Stover" href="https://charlesstover.com/" title="CharlesStover.com" />
+          <Link children="Jaq Quisido" href="https://quisido.com/" title="Quisido.com" />
         </Typography>
       );
     }

@@ -8,9 +8,9 @@ import NotFound from '../not-found/not-found';
 
 const footer = [
   {
-    children: 'Ace Quisido',
+    children: 'Jaq Quisido',
     href: 'https://quisido.com/',
-    title: 'Ace Quisido\'s Portfolio'
+    title: 'Jaq Quisido\'s Portfolio'
   }
 ];
 
@@ -46,11 +46,8 @@ const routes = [
 ];
 
 const social = {
-  email: 'ace@quisido.com',
+  email: 'jaq@quisido.com',
   linkedin: 'acequisido',
-  // medium: 'Ace Quisido',
-  // skype: 'ace-quisido',
-  twitter: 'AceQuisido',
 };
 
 class App extends React.PureComponent {

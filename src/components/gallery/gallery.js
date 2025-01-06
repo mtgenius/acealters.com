@@ -126,9 +126,9 @@ class Gallery extends React.PureComponent {
               href="https://quisido.com/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Ace Quisido's Portfolio"
+              title="Jaq Quisido's Portfolio"
             >
-              Ace Quisido
+              Jaq Quisido
             </a>.
           </Typography>
         </Paper>
